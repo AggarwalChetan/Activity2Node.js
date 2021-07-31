@@ -1,8 +1,9 @@
 let readFilesObj = require('./commands/readFiles');
 let appendFilesObj = require('./commands/appendFiles');
 let linesBreaksObj = require('./commands/linesBreaks');
-let inputArg = process.argv.slice(2);
+let numberFilesObj = require('./commands/numberFiles');
 
+let inputArg = process.argv.slice(2);
 
 switch (inputArg[0]) {
     case "-s":
@@ -11,6 +12,10 @@ switch (inputArg[0]) {
 
     case "-n":
         appendFilesObj.appendFiles(inputArg[1]);
+        break;
+
+    case "-m":
+        numberFilesObj.numberFiles(inputArg[1]);
         break;
 
     default:

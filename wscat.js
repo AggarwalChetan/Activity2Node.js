@@ -7,15 +7,24 @@ let inputArg = process.argv.slice(2);
 let content = "";
 switch (inputArg[0]) {
     case "-s":
-        content = linesBreaksObj.linesBreaks(inputArg[1]);
+        for (let i = 1; i < inputArg.length; ++i) {
+            content += linesBreaksObj.linesBreaks(inputArg[i]);
+            content += i == inputArg.length - 1 ? "" : "\n";
+        }
         break;
 
     case "-n":
-        content = appendFilesObj.appendFiles(inputArg[1]);
+        for (let i = 1; i < inputArg.length; ++i) {
+            content += appendFilesObj.appendFiles(inputArg[i]);
+            content += i == inputArg.length - 1 ? "" : "\n";
+        }
         break;
 
     case "-m":
-        content = numberFilesObj.numberFiles(inputArg[1]);
+        for (let i = 1; i < inputArg.length; ++i) {
+            content += numberFilesObj.numberFiles(inputArg[i]);
+            content += i == inputArg.length - 1 ? "" : "\n";
+        }
         break;
 
     default:
@@ -24,6 +33,7 @@ switch (inputArg[0]) {
             content += i == inputArg.length - 1 ? "" : "\n";
         }
 }
+
 console.log(content);
 
 

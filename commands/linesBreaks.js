@@ -15,7 +15,7 @@ function linesBreaks(props) {
     while (i < content.length) {
         if (content[i] == '') {
             if (spaces < 1) {
-                res += '\n\n';
+                res += '\n';
                 ++spaces;
             }
         } else {

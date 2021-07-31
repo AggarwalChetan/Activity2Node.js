@@ -14,16 +14,30 @@ switch (inputArg[0]) {
         break;
 
     case "-n":
-        for (let i = 1; i < inputArg.length; ++i) {
-            content += appendFilesObj.appendFiles(inputArg[i]);
-            content += i == inputArg.length - 1 ? "" : "\n";
+        if (inputArg[1] == '-m') {
+            for (let i = 2; i < inputArg.length; ++i) {
+                content += appendFilesObj.appendFiles(inputArg[i]);
+                content += i == inputArg.length - 1 ? "" : "\n";
+            }
+        } else {
+            for (let i = 1; i < inputArg.length; ++i) {
+                content += appendFilesObj.appendFiles(inputArg[i]);
+                content += i == inputArg.length - 1 ? "" : "\n";
+            }
         }
         break;
 
     case "-m":
-        for (let i = 1; i < inputArg.length; ++i) {
-            content += numberFilesObj.numberFiles(inputArg[i]);
-            content += i == inputArg.length - 1 ? "" : "\n";
+        if (inputArg[1] == '-n') {
+            for (let i = 2; i < inputArg.length; ++i) {
+                content += numberFilesObj.numberFiles(inputArg[i]);
+                content += i == inputArg.length - 1 ? "" : "\n";
+            }
+        } else {
+            for (let i = 1; i < inputArg.length; ++i) {
+                content += numberFilesObj.numberFiles(inputArg[i]);
+                content += i == inputArg.length - 1 ? "" : "\n";
+            }
         }
         break;
 

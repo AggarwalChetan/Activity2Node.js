@@ -4,28 +4,27 @@ let linesBreaksObj = require('./commands/linesBreaks');
 let numberFilesObj = require('./commands/numberFiles');
 
 let inputArg = process.argv.slice(2);
-
+let content = "";
 switch (inputArg[0]) {
     case "-s":
-        linesBreaksObj.linesBreaks(inputArg[1]);
+        content = linesBreaksObj.linesBreaks(inputArg[1]);
         break;
 
     case "-n":
-        appendFilesObj.appendFiles(inputArg[1]);
+        content = appendFilesObj.appendFiles(inputArg[1]);
         break;
 
     case "-m":
-        numberFilesObj.numberFiles(inputArg[1]);
+        content = numberFilesObj.numberFiles(inputArg[1]);
         break;
 
     default:
-        let content = ""
         for (let i = 0; i < inputArg.length; ++i) {
             content += readFilesObj.readFiles(inputArg[i]);
             content += i == inputArg.length - 1 ? "" : "\n";
         }
-        console.log(content);
 }
+console.log(content);
 
 
 

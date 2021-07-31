@@ -22,8 +22,7 @@ function numberFiles(props) {
             res += '\n';
         }
     }
-
-    fileSystem.writeFileSync(props, res);
+    return res;
 }
 
 module.exports = {

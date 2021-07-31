@@ -8,8 +8,7 @@ function readFiles(props) {
         return;
     }
 
-    let content = fileSystem.readFileSync(props);
-    return content;
+    return fileSystem.readFileSync(props);
 }
 
 module.exports = {

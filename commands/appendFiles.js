@@ -6,6 +6,7 @@ function appendFiles(props) {
         console.log("File does not exists");
         return;
     }
+    
     let content = fileSystem.readFileSync(props).toString().split('\n');
     let res = "";
     for (let i = 1; i <= content.length; ++i) {
@@ -13,7 +14,7 @@ function appendFiles(props) {
         res += content[i - 1];
         res += (i == content.length ? "" : '\n');
     }
-    fileSystem.writeFileSync(props, res);
+    return res;
 }
 
 module.exports = {

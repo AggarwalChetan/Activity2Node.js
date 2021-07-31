@@ -48,7 +48,10 @@ switch (inputArg[0]) {
         }
 }
 
-console.log(content);
+if (content != "undefined") {
+    console.log(content);
+}
+
 
 
 

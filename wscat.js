@@ -11,6 +11,16 @@ switch (inputArg[0]) {
     case "-s":
         if (inputArg[1] == "-m") {
             for (let i = 2; i < inputArg.length; ++i) {
+                let isFileExists = fileSystem.existsSync(inputArg[i]);
+                
+                // Check for file Existence
+                if (isFileExists == false) {
+                    console.log(`\n                            *****************************************************
+                            Error : File does not exists | Path not Found ${inputArg[i]}
+                                *****************************************************`);
+                    continue;
+                }
+
                 content += linesBreaksObj.linesBreaks(inputArg[i]);
                 content += i == inputArg.length - 1 ? "" : "\n";
             }
@@ -19,6 +29,16 @@ switch (inputArg[0]) {
             fileSystem.unlinkSync("temp.txt");
         } else if (inputArg[1] == "-n") {
             for (let i = 2; i < inputArg.length; ++i) {
+                let isFileExists = fileSystem.existsSync(inputArg[i]);
+                
+                // Check for file Existence
+                if (isFileExists == false) {
+                    console.log(`\n                            *****************************************************
+                            Error : File does not exists | Path not Found ${inputArg[i]}
+                                *****************************************************`);
+                    continue;
+                }
+
                 content += linesBreaksObj.linesBreaks(inputArg[i]);
                 content += i == inputArg.length - 1 ? "" : "\n";
             }
@@ -27,6 +47,16 @@ switch (inputArg[0]) {
             fileSystem.unlinkSync("temp.txt");
         } else {
             for (let i = 1; i < inputArg.length; ++i) {
+                let isFileExists = fileSystem.existsSync(inputArg[i]);
+                
+                // Check for file Existence
+                if (isFileExists == false) {
+                    console.log(`\n                            *****************************************************
+                            Error : File does not exists | Path not Found ${inputArg[i]}
+                                *****************************************************`);
+                    continue;
+                }
+
                 content += linesBreaksObj.linesBreaks(inputArg[i]);
                 content += i == inputArg.length - 1 ? "" : "\n";
             }
@@ -36,11 +66,31 @@ switch (inputArg[0]) {
     case "-n":
         if (inputArg[1] == '-m') {
             for (let i = 2; i < inputArg.length; ++i) {
+                let isFileExists = fileSystem.existsSync(inputArg[i]);
+                
+                // Check for file Existence
+                if (isFileExists == false) {
+                    console.log(`\n                            *****************************************************
+                            Error : File does not exists | Path not Found ${inputArg[i]}
+                                *****************************************************`);
+                    continue;
+                }
+
                 content += appendFilesObj.appendFiles(inputArg[i]);
                 content += i == inputArg.length - 1 ? "" : "\n";
             }
         } else if (inputArg[1] == '-s') {
             for (let i = 2; i < inputArg.length; ++i) {
+                let isFileExists = fileSystem.existsSync(inputArg[i]);
+                
+                // Check for file Existence
+                if (isFileExists == false) {
+                    console.log(`\n                            *****************************************************
+                            Error : File does not exists | Path not Found ${inputArg[i]}
+                                *****************************************************`);
+                    continue;
+                }
+
                 content += linesBreaksObj.linesBreaks(inputArg[i]);
                 content += i == inputArg.length - 1 ? "" : "\n";
             }
@@ -49,6 +99,16 @@ switch (inputArg[0]) {
             fileSystem.unlinkSync("temp.txt");
         } else {
             for (let i = 1; i < inputArg.length; ++i) {
+                let isFileExists = fileSystem.existsSync(inputArg[i]);
+                
+                // Check for file Existence
+                if (isFileExists == false) {
+                    console.log(`\n                            *****************************************************
+                            Error : File does not exists | Path not Found ${inputArg[i]}
+                                *****************************************************`);
+                    continue;
+                }
+
                 content += appendFilesObj.appendFiles(inputArg[i]);
                 content += i == inputArg.length - 1 ? "" : "\n";
             }
@@ -58,11 +118,31 @@ switch (inputArg[0]) {
     case "-m":
         if (inputArg[1] == '-n') {
             for (let i = 2; i < inputArg.length; ++i) {
+                let isFileExists = fileSystem.existsSync(inputArg[i]);
+
+                // Check for file Existence
+                if (isFileExists == false) {
+                    console.log(`\n                            *****************************************************
+                            Error : File does not exists | Path not Found ${inputArg[i]}
+                                *****************************************************`);
+                    continue;
+                }
+
                 content += numberFilesObj.numberFiles(inputArg[i]);
                 content += i == inputArg.length - 1 ? "" : "\n";
             }
         } else if (inputArg[1] == '-s') {
             for (let i = 2; i < inputArg.length; ++i) {
+                let isFileExists = fileSystem.existsSync(inputArg[i]);
+
+                // Check for file Existence
+                if (isFileExists == false) {
+                    console.log(`\n                            *****************************************************
+                            Error : File does not exists | Path not Found ${inputArg[i]}
+                                *****************************************************`);
+                    continue;
+                }
+
                 content += linesBreaksObj.linesBreaks(inputArg[i]);
                 content += i == inputArg.length - 1 ? "" : "\n";
             }
@@ -71,7 +151,17 @@ switch (inputArg[0]) {
             fileSystem.unlinkSync("temp.txt");
         } else {
             for (let i = 1; i < inputArg.length; ++i) {
-                content += numberFilesObj.numberFiles(inputArg[i]);
+                let isFileExists = fileSystem.existsSync(inputArg[i]);
+
+                // Check for file Existence
+                if (isFileExists == false) {
+                    console.log(`\n                            *****************************************************
+                            Error : File does not exists | Path not Found ${inputArg[i]}
+                                *****************************************************`);
+                    continue;
+                }
+                
+                content += fileContent;
                 content += i == inputArg.length - 1 ? "" : "\n";
             }
         }
@@ -79,14 +169,22 @@ switch (inputArg[0]) {
 
     default:
         for (let i = 0; i < inputArg.length; ++i) {
+            let isFileExists = fileSystem.existsSync(inputArg[i]);
+
+            // Check for file Existence
+            if (isFileExists == false) {
+                console.log(`\n                            *****************************************************
+                        Error : File does not exists | Path not Found ${inputArg[i]}
+                            *****************************************************`);
+                continue;
+            }
+
             content += readFilesObj.readFiles(inputArg[i]);
             content += i == inputArg.length - 1 ? "" : "\n";
         }
 }
 
-if (content != "undefined") {
-    console.log(content);
-}
+console.log(content);
 
 
 

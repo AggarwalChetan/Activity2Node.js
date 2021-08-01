@@ -1,12 +1,6 @@
 let fileSystem = require('fs');
 
-function appendFiles(props) {
-    let isFileExists = fileSystem.existsSync(props);
-    if (isFileExists == false) {
-        console.log("File does not exists");
-        return;
-    }
-    
+function appendFiles(props) {  
     let content = fileSystem.readFileSync(props).toString().split('\n');
     let res = "";
     for (let i = 1; i <= content.length; ++i) {

@@ -1,13 +1,6 @@
 let fileSystem = require('fs');
 
 function numberFiles(props) {
-
-    let isFileExists = fileSystem.existsSync(props);
-    if (isFileExists == false) {
-        console.log("File does not exists");
-        return;
-    }
-
     let content = fileSystem.readFileSync(props).toString().split('\n');
     let res = "";
     let number = 1;

@@ -26,3 +26,9 @@ Commands:
       node wcat -b filepath => give numbering to non-empty lines
 
 User can mix and match the options.
+
+Following Edge cases are handled
+      
+     If file entered is not found then it gives file does not exist error.
+     
+     -n and -b are 2 options which are mutually exclusive so if user types both of them together only the first enter option should work.

@@ -24,3 +24,5 @@ Commands:
       node wcat.js -n filepath => give numbering to all the lines 
 
       node wcat -b filepath => give numbering to non-empty lines
+
+User can mix and match the options.

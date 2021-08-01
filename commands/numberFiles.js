@@ -15,11 +15,11 @@ function numberFiles(props) {
         if (content[i] != '') {
             res += number + " ";
             res += content[i];
-            res += '\n';
+            res += (i == content.length - 1 ? "" : '\n');
             ++number;
-        }else{
+        } else {
             res += content[i];
-            res += '\n';
+            res += (i == content.length - 1 ? "" : '\n');
         }
     }
     return res;

@@ -15,12 +15,12 @@ function linesBreaks(props) {
     while (i < content.length) {
         if (content[i] == '') {
             if (spaces < 1) {
-                res += '\n';
+                res += (i == content.length - 1 ? "" : '\n');
                 ++spaces;
             }
         } else {
             res += content[i];
-            res += '\n';
+            res += (i == content.length - 1 ? "" : '\n');
             spaces = 0;
         }
         ++i;

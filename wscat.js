@@ -9,7 +9,7 @@ let inputArg = process.argv.slice(2);
 let content = "";
 switch (inputArg[0]) {
     case "-s":
-        if (inputArg[1] == "-m") {
+        if (inputArg[1] == "-b") {
             for (let i = 2; i < inputArg.length; ++i) {
                 let isFileExists = fileSystem.existsSync(inputArg[i]);
                 
@@ -64,7 +64,7 @@ switch (inputArg[0]) {
         break;
 
     case "-n":
-        if (inputArg[1] == '-m') {
+        if (inputArg[1] == '-b') {
             for (let i = 2; i < inputArg.length; ++i) {
                 let isFileExists = fileSystem.existsSync(inputArg[i]);
                 
@@ -115,7 +115,7 @@ switch (inputArg[0]) {
         }
         break;
 
-    case "-m":
+    case "-b":
         if (inputArg[1] == '-n') {
             for (let i = 2; i < inputArg.length; ++i) {
                 let isFileExists = fileSystem.existsSync(inputArg[i]);
@@ -161,7 +161,7 @@ switch (inputArg[0]) {
                     continue;
                 }
                 
-                content += fileContent;
+                content += numberFilesObj.numberFiles(inputArg[i]);
                 content += i == inputArg.length - 1 ? "" : "\n";
             }
         }

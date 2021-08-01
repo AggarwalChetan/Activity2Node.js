@@ -166,7 +166,7 @@ switch (inputArg[0]) {
             }
         }
         break;
-
+        
     default:
         for (let i = 0; i < inputArg.length; ++i) {
             let isFileExists = fileSystem.existsSync(inputArg[i]);
